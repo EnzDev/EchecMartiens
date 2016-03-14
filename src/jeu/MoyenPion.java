@@ -1,8 +1,7 @@
-package jeu;
-
-import Liste.Liste;
-import jeu.Coordonnee;
-
+/**
+@author Mallard-Le Bert
+*/
+import liste.Liste;
 public abstract class MoyenPion{
 /**
 @return score qui donne le nombre de point associé au pion
@@ -57,7 +56,6 @@ public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY
     deplacement.add(null);
     }
 }
-
 
 public String toString() {
   return "valeur: " + this.getScore();
