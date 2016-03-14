@@ -1,7 +1,7 @@
 package jeu;
-
+import Liste.Liste;
 public abstract class Pion{
 
-public int getScore(){}
-public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY, int coordArriveeY){}
+public abstract int getScore();
+public abstract Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY);
 }

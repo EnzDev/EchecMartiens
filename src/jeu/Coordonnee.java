@@ -1,6 +1,8 @@
 /**
 @author Mallard-Le Bert
 */
+package jeu;
+
 public class Coordonnee{
   private int x;
   private int y;

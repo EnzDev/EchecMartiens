@@ -1,7 +1,9 @@
 /**
 @author Mallard-Le Bert
 */
-import liste.Liste;
+package jeu;
+
+import Liste.Liste;
 public abstract class MoyenPion{
 /**
 @return score qui donne le nombre de point associé au pion
