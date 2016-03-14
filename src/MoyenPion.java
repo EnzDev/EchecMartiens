@@ -47,8 +47,6 @@ public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY
           }
         }
       }
-
-
   else {
     deplacement.add(null);
     }
