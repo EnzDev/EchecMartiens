@@ -1,4 +1,4 @@
-import liste.Liste;
+import Liste.Liste;
 public abstract class MoyenPion{
 /**
 @return score qui donne le nombre de point associé au pion
