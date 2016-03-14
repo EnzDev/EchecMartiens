@@ -13,6 +13,10 @@ public Coordonnee(int abscisse, int ordonnee){
   this.x = abscisse;
   this.y = ordonnee;
 }
+public void setCo(int abscisse, int ordonnee){
+  this.x = abscisse;
+  this.y = ordonnee;
+}
 
 /** methode qui permet d'afficher les coordonées
 */
