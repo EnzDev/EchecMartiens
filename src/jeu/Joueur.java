@@ -31,7 +31,7 @@ public class Joueur{
     public int calculerScore(){
         int score = 0;
         for (int i=0; i<this.pionsCaptures.size(); i++){
-            score += this.pionsCaptures.get(i).getScore();
+            score += ((Pion)this.pionsCaptures.get(i)).getScore();
         }
         return score;
     }
