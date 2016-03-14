@@ -16,15 +16,14 @@ methode qui liste les déplacements autorisés
 */
 public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY, int coordArriveeY){
   Liste deplacement = new Liste();
-  if ((Math.abs(coordDepardX-coordArriveeX))==1 && (Math.abs(coordDepardY-coordArriveeY)== 1){
-    Coordonnee depard = new Coordonnee (coordDepardX,coordDepardY);
+  //move is less of one and move is made diagonally
+  if ((Math.abs(coordDepardX-coordArriveeX))==1 && (Math.abs(coordDepardY-coordArriveeY)== 1) && (Math.abs(coordDepardY-coordArriveeY)==(Math.abs(coordDepardX-coordArriveeX)))){
     Coordonnee arrivee = new Coordonnee (coordArriveeX,coordArriveeY);
-    deplacement.add(depard);
     deplacement.add(arrivee);
-    return deplacement;
   } else {
     deplacement.add(null);
     }
+    return deplacement;
 }
 public String toString() {
   return "valeur: " + this.getScore();
