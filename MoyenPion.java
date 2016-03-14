@@ -15,8 +15,13 @@ methode qui liste les déplacements autorisés
 */
 public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY, int coordArriveeY){
   Liste deplacement = new Liste();
-  if ((Math.abs(coordDepardX-coordArriveeX))<=2 && (Math.abs(coordDepardY-coordArriveeY)<=2){
+  if ((Math.abs(coordDepardX-coordArriveeX))<=2 && (Math.abs(coordDepardY-coordArriveeY)<=2) && ((coordDepardX==coordArriveeX)||(coordDepardY==coordArriveeY)||Math.abs(coordArriveeX-coordDepardX)==Math.abs(coordArriveeY-coordDepardY)){
     Coordonnee depard = new Coordonnee (coordDepardX,coordDepardY)
+    if (coordDepardX==coordArriveeX){
+    }(coordDepardY==coordArriveeY)
+    Math.abs(coordArriveeX-coordDepardX)==Math.abs(coordArriveeY-coordDepardY)
+
+
     Coordonnee arrivee = new Coordonnee (coordArriveeX,coordArriveeY)
     deplacement.add(depard);
     deplacement.add(arrivee);
