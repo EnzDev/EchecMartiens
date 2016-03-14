@@ -1,4 +1,4 @@
-import Liste.*
+import Liste.*;
 public class Joueur{
     String pseudo;
     Liste pionsCaptures;
@@ -17,7 +17,7 @@ public class Joueur{
     }
 
     public boolean equals(Object object) {
-        { if (object instanceof joueur) {
+         if (object instanceof Joueur) {
             if ( ((Joueur)object).pseudo.equals(this.pseudo) ){
                 return true;
             }
@@ -27,7 +27,7 @@ public class Joueur{
 
 
     public int calculerScore(){
-        score = 0;
+        int score = 0;
         for (int i=0; i<this.pionsCaptures.size(); i++){
             score += this.pionsCaptures.get(i).getScore();
         }
