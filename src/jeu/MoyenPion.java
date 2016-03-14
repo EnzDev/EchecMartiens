@@ -3,7 +3,7 @@
 */
 package jeu;
 
-import Liste.Liste;
+import liste.Liste;
 public abstract class MoyenPion{
 /**
 @return score qui donne le nombre de point associé au pion

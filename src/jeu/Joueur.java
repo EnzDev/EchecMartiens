@@ -1,9 +1,9 @@
 package jeu;
 
-import Liste.*;
+import liste.*;
 public class Joueur{
-    String pseudo;
-    Liste pionsCaptures;
+    private String pseudo;
+    private Liste pionsCaptures;
 
     public Joueur(String j){
         this.pseudo = j;

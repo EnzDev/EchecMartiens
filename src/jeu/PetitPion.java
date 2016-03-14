@@ -1,7 +1,6 @@
 package jeu;
 
-import Liste.*;
-import jeu.Coordonnee;
+import liste.*;
 
 public abstract class PetitPion{
 /**

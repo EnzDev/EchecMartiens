@@ -1,4 +1,4 @@
-package Liste;
+package liste;
 
 import java.util.ArrayList;
 
@@ -14,8 +14,7 @@ public class Liste {
 
     public Object get(int var1) {
         try {
-            Object var2 = this.liste.get(var1);
-            return var2;
+            return this.liste.get(var1);
         } catch (IndexOutOfBoundsException var3) {
             return null;
         }

@@ -1,5 +1,5 @@
 package jeu;
-import Liste.Liste;
+import liste.Liste;
 public abstract class Pion{
 
 public abstract int getScore();

@@ -8,8 +8,8 @@ public class Coordonnee{
   private int y;
 
   /**constructeur de la classe Coordonnee
-  *@param x qui represente l'abscisse de la Coordonnee
-  *@param x qui represente l'ordonnee de la Coordonnee
+  *@param abscisse qui represente l'abscisse de la Coordonnee
+  *@param ordonnee qui represente l'ordonnee de la Coordonnee
   */
 public Coordonnee(int abscisse, int ordonnee){
   this.x = abscisse;
