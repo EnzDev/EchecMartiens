@@ -51,6 +51,7 @@ public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY
     deplacement.add(null);
     }
 }
-public String toString() {}
+public String toString() {
   return "valeur: " + this.getScore();
+}
 }
