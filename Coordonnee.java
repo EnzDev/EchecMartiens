@@ -17,7 +17,7 @@ public Coordonnee(int abscisse, int ordonnee){
 /** methode qui permet d'afficher les coordonées
 */
 public String toString(){
-  return "x : " + x + "\t y : " + y
+  return "x : " + x + "\t y : " + y;
 }
 
 }

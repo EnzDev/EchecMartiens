@@ -1,9 +1,9 @@
-public abstract class PetitPion{
+public abstract class MoyenPion{
 /**
 @return score qui donne le nombre de point associé au pion
 */
 public int getScore(){
-  return 1;
+  return 2;
 }
 /**
 methode qui liste les déplacements autorisés
@@ -15,7 +15,7 @@ methode qui liste les déplacements autorisés
 */
 public Liste getDeplacement(int coordDepardX,int coordArriveeX, int coordDepardY, int coordArriveeY){
   Liste deplacement = new Liste();
-  if ((Math.abs(coordDepardX-coordArriveeX))==1 && (Math.abs(coordDepardY-coordArriveeY)== 1){
+  if ((Math.abs(coordDepardX-coordArriveeX))<=2 && (Math.abs(coordDepardY-coordArriveeY)<=2){
     Coordonnee depard = new Coordonnee (coordDepardX,coordDepardY)
     Coordonnee arrivee = new Coordonnee (coordArriveeX,coordArriveeY)
     deplacement.add(depard);
