@@ -1,4 +1,8 @@
+package jeu;
+
 import Liste.*;
+import jeu.Coordonnee;
+
 public abstract class PetitPion{
 /**
 @return score qui donne le nombre de point associé au pion

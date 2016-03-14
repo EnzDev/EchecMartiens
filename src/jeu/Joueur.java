@@ -1,3 +1,5 @@
+package jeu;
+
 import Liste.*;
 public class Joueur{
     String pseudo;
@@ -9,7 +11,7 @@ public class Joueur{
     }
 
     public void ajouterPionCapture(Pion pionCapture) {
-        this.pionsCaptures.add() = pionCapture;
+        this.pionsCaptures.add(pionCapture);
     }
 
     public int getNbPionsCaptures(){

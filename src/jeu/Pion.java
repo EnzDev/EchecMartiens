@@ -1,3 +1,5 @@
+package jeu;
+
 public abstract class Pion{
 
 public int getScore(){}
