@@ -2,7 +2,7 @@ package jeu;
 
 import liste.*;
 
-public abstract class PetitPion {
+public class PetitPion extends Pion {
     /**
      * @return score qui donne le nombre de point associé au pion
      */

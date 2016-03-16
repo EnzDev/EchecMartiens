@@ -5,7 +5,7 @@ package jeu;
 
 import liste.Liste;
 
-public abstract class MoyenPion {
+public class MoyenPion extends Pion {
     /**
      @return score qui donne le nombre de point associé au pion
      */
