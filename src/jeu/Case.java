@@ -45,4 +45,8 @@ public class Case {
      * @return le joueur possesseur de la case
      */
     public Joueur getJoueur() { return joueur; }
+
+    public String toString(){
+        return (this.pion==null) ? " " : this.pion.toString();
+    }
 }

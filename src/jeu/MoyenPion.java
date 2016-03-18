@@ -62,7 +62,7 @@ public class MoyenPion extends Pion {
     }
 
     public String toString() {
-        return "valeur: " + this.getScore();
+        return "⚫";
     }
 
 

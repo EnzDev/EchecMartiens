@@ -69,8 +69,7 @@ public class Plateau {
 
     public String toString() {
         String output = "";
-
-
+        
 
 
 
