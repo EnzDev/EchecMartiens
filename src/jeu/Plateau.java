@@ -52,32 +52,37 @@ public class Plateau {
 
         /** Joueur 2
          */
-        this.grille[8][8].setPion(new GrandPion());
-        this.grille[8][7].setPion(new GrandPion());
-        this.grille[7][8].setPion(new GrandPion());
+        this.grille[2][7].setPion(new GrandPion());
+        this.grille[3][6].setPion(new GrandPion());
+        this.grille[3][7].setPion(new GrandPion());
 
-        this.grille[8][6].setPion(new MoyenPion());
-        this.grille[7][7].setPion(new MoyenPion());
-        this.grille[6][8].setPion(new MoyenPion());
+        this.grille[3][5].setPion(new MoyenPion());
+        this.grille[2][6].setPion(new MoyenPion());
+        this.grille[1][7].setPion(new MoyenPion());
 
-        this.grille[7][6].setPion(new PetitPion());
-        this.grille[6][6].setPion(new PetitPion());
-        this.grille[6][7].setPion(new PetitPion());
+        this.grille[1][5].setPion(new PetitPion());
+        this.grille[2][5].setPion(new PetitPion());
+        this.grille[1][6].setPion(new PetitPion());
 
     }
 
 
     public String toString() {
-        String output = "";
-        
+        String output = "┌───┬───┬───┬───┐\n";
 
+        for (int y = 0; y < 3 ; y++) {
+            output += "│ "+ this.grille[0][y] +" │ "+ this.grille[1][y] +" │ "+ this.grille[2][y] +" │ "+ this.grille[3][y] +" │\n";
+            output += "├───┼───┼───┼───┤\n";
+        }
+        output += "│ "+ this.grille[0][3] +" │ "+ this.grille[1][3] +" │ "+ this.grille[2][3] +" │ "+ this.grille[3][3] +" │\n";
+        output += "╞═══╪═══╪═══╪═══╡\n";
 
-
-        
-
-
-
-
+        for (int y = 4; y < 7 ; y++) {
+            output += "│ "+ this.grille[0][y] +" │ "+ this.grille[1][y] +" │ "+ this.grille[2][y] +" │ "+ this.grille[3][y] +" │\n";
+            output += "├───┼───┼───┼───┤\n";
+        }
+        output += "│ "+ this.grille[0][7] +" │ "+ this.grille[1][7] +" │ "+ this.grille[2][7] +" │ "+ this.grille[3][7] +" │\n";
+        output += "└───┴───┴───┴───┘\n";
 
         return output;
     }
