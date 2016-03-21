@@ -9,6 +9,14 @@ public class Plateau {
 
     Case[][] grille;
 
+    public int getTailleHorizontale() {
+        return tailleHorizontale;
+    }
+
+    public void setGrille(int x, int y, Case c) {
+        this.grille[x][y] = c;
+    }
+
     /**
      * @param size taille horizontale du tableau
      */
@@ -23,18 +31,7 @@ public class Plateau {
 
     public Plateau(){ this(4);}
 
-    public void init(Joueur j1, Joueur j2){
-        for (int a = 0; a < this.tailleHorizontale ; a++) {
-            for (int b = 0; b < this.tailleHorizontale ; b++) {
-                this.grille[a][b] = new Case(j1);
-            }
-        }
-
-        for (int a = 0; a < this.tailleHorizontale ; a++) {
-            for (int b = 0; b < this.tailleHorizontale ; b++) {
-                this.grille[a][b+this.tailleHorizontale] = new Case(j2);
-            }
-        }
+    public void initialiser(){
 
         /** Joueur 1
          */
