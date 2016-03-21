@@ -19,7 +19,7 @@ public class Jeu {
     /** initialise les cases du plateau avec leurs joueurs respectif puis lance initialiser de plateau pour créer les pions
      *
      */
-    public void initaliserPlateau(){
+    public void initialiserPlateau(){
 
         for (int a = 0; a < this.plateau.getTailleHorizontale() ; a++) {
             for (int b = 0; b < this.plateau.getTailleHorizontale() ; b++) {

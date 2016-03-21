@@ -1,4 +1,4 @@
-package jeu;
+import jeu.*;
 
 public class testJeu {
     public static void main(String args){
@@ -13,12 +13,12 @@ public class testJeu {
         jeu.initialiserPlateau();
         jeu.toString();
         //tour is of value 1 or 0 dependending on which player turn it is.
-        int tour;
+        int tour = 0;
         //gameplay
         while (jeu.arretPartie() == false){
           jeu.jouer(joueur[tour]);
           jeu.toString();
-          if  (tour = 0) { tour = 1 ;} else {tour = 0;}
+          if  (tour == 0) { tour = 1 ;} else {tour = 0;}
           }
         }
         System.out.println(jeu.joueurVainqueur());
