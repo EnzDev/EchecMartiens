@@ -19,7 +19,7 @@ public class PetitPion extends Pion {
      * @param coordArriveeY qui représente l'ordonée d'arrivé
      * @return deplacement qui donne les cases parcourues au cours du déplacement
      */
-    public Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
+    public static Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
         Liste deplacement = new Liste();
         //move is less of one and move is made diagonally
         if ((Math.abs(coordDepardX - coordArriveeX)) == 1 && (Math.abs(coordDepardY - coordArriveeY) == 1) && (Math.abs(coordDepardY - coordArriveeY) == (Math.abs(coordDepardX - coordArriveeX)))) {

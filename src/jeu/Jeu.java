@@ -1,5 +1,7 @@
 package jeu;
 
+import liste.Liste;
+
 public class Jeu {
     Pion pionArriveDeZone;
     Joueur[] joueurs;
@@ -32,6 +34,24 @@ public class Jeu {
         }
 
         plateau.initialiser();
+    }
+
+    public boolean deplacementPossible(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY, Joueur joueur){
+        Case c = this.plateau.getGrille(coordDepardX, coordDepardY);
+        Liste depl = (c.getPion()).getDeplacement(coordDepardX, coordArriveeX, coordDepardY, coordArriveeY);
+
+        if(depl==null){return false;}
+
+        if (c.getJoueur().equals(joueur)){
+            if (c.getPion()==this.pionArriveDeZone){return false;}{
+                for (int i = 0; i < depl.size()-1; i++) {
+                    Coordonnee cord = (Coordonnee)depl.get(i);
+                    if(this.plateau.getGrille(cord.getX(),cord.getY())!=null){return false;};
+                }
+            }
+        }else{return false;}
+
+        return true;
     }
 
 

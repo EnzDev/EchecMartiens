@@ -17,6 +17,10 @@ public class Plateau {
         this.grille[x][y] = c;
     }
 
+    public Case getGrille(int x, int y) {
+        return this.grille[x][y];
+    }
+
     /**
      * @param size taille horizontale du tableau
      */
