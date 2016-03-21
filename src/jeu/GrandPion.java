@@ -48,7 +48,7 @@ public class GrandPion extends Pion{
                     Coordonnee etape = new Coordonnee(coordArriveeX, coordArriveeY);
                     //pour i de 1 a la taille du déplacement
                     for (int i = 1; i <= Math.abs(coordDepardX - coordArriveeX); i++) {
-                        etape.setCo(coordArriveeX + i, coordArriveeY);
+                        etape.setCo(coordArriveeX + i, coordArriveeY + i);
                         deplacement.add(etape);
                     }
                 }
