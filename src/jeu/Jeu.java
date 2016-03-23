@@ -2,6 +2,7 @@ package jeu;
 
 import liste.Liste;
 
+
 public class Jeu {
     Pion pionArriveDeZone;
     Joueur[] joueurs;
@@ -43,7 +44,7 @@ public class Jeu {
         if(depl==null){return false;}
 
         if (c.getJoueur().equals(joueur)){
-            if (c.getPion()==this.pionArriveDeZone){return false;}{
+            if (c.getPion()==this.pionArriveDeZone && !this.plateau.getGrille(coordDepardX, coordDepardY).getJoueur().equals(joueur)){return false;}{
                 for (int i = 0; i < depl.size()-1; i++) {
                     Coordonnee cord = (Coordonnee)depl.get(i);
                     if(this.plateau.getGrille(cord.getX(),cord.getY())!=null){return false;};
@@ -54,6 +55,33 @@ public class Jeu {
         return true;
     }
 
+    /** The programmer should verify deplacementPossible()
+     * @param coordDepardX
+     * @param coordArriveeX
+     * @param coordDepardY
+     * @param coordArriveeY
+     * @param joueur
+     */
+    public void deplacer(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY, Joueur joueur){
+        Case oldC = this.plateau.getGrille(coordDepardX,  coordDepardY);
+        Case newC = this.plateau.getGrille(coordArriveeX, coordArriveeY);
+        newC.setPion(oldC.getPion());
+        oldC.setPion(null);
+    }
 
+    private jouer(Joueur joueur){
+        int coordAX;
+        int coordAY;
+        coordAX = clavier.readInt();
+        coordAY = clavier.readInt();
+        deplacementPossible(dx,dy,coordAX,coordAY,joueur)
+
+    }
+
+
+    public boolean arretPartie(){
+
+        return true;
+    }
 
 }
