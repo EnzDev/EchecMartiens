@@ -13,6 +13,12 @@ public class Joueur {
         this.pseudo = j;
         this.pionsCaptures = new Liste();
     }
+    /**
+    @return pseudo
+    */
+    public String getPseudo(){
+      return this.pseudo;
+    }
 
     /**
      * @param pionCapture sera ajouté aux pions du joueur

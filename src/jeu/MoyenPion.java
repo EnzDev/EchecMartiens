@@ -21,7 +21,7 @@ public class MoyenPion extends Pion {
      @param coordArriveeY qui représente l'ordonée d'arrivé
      @return deplacement qui donne les cases parcourues au cours du déplacement
      */
-    public static Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
+    public Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
         Liste deplacement = new Liste();
         //test d'autorisation de deplacement: inferieur a 2 cas, deplacement vertical, deplacement honrizontal ou deplacement diagonal
         if ((Math.abs(coordDepardX - coordArriveeX)) <= 2 && (Math.abs(coordDepardY - coordArriveeY) <= 2) && ((coordDepardX == coordArriveeX) || (coordDepardY == coordArriveeY) || Math.abs(coordArriveeX - coordDepardX) == Math.abs(coordArriveeY - coordDepardY))) {

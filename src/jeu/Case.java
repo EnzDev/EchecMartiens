@@ -23,7 +23,7 @@ public class Case {
     /**
      * @return vrai si la case est vide
      */
-    public boolean estVide(){ return this.pion==null; }
+    public boolean estLibre(){ return this.pion==null; }
 
     /**
      * @param pion est le nouveau pion de la case
