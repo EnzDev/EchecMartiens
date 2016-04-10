@@ -1,4 +1,5 @@
 package clavier;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,33 +9,14 @@ public final class Clavier {
     private Clavier() {
     }
 
-    public static boolean readBoolean() {
-        return Boolean.getBoolean(readLine());
-    }
-
-    public static char readChar() {
-        return readLine().charAt(0);
-    }
 
     public static int readInt() {
         int var0;
         try {
-            var0 = (new Integer(readLine())).intValue();
+            var0 = new Integer(readLine());
         } catch (NumberFormatException var2) {
             System.err.println("Rentrez un int");
             var0 = readInt();
-        }
-
-        return var0;
-    }
-
-    public static double readDouble() {
-        double var0;
-        try {
-            var0 = (new Double(readLine())).doubleValue();
-        } catch (NumberFormatException var3) {
-            System.err.println("Rentrez un double");
-            var0 = readDouble();
         }
 
         return var0;

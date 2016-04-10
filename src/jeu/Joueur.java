@@ -1,6 +1,6 @@
 package jeu;
 
-import liste.*;
+import liste.Liste;
 
 public class Joueur {
     private String pseudo;

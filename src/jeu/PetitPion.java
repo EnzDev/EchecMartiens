@@ -1,6 +1,6 @@
 package jeu;
 
-import liste.*;
+import liste.Liste;
 
 public class PetitPion extends Pion {
     /**
@@ -24,8 +24,8 @@ public class PetitPion extends Pion {
         if ((Math.abs(coordDepardX - coordArriveeX)) == 1 && (Math.abs(coordDepardY - coordArriveeY) == 1)) {
             Liste deplacement = new Liste();
 
-            deplacement.add(new Coordonnee(coordDepardX,coordDepardY));
-            deplacement.add(new Coordonnee(coordArriveeX,coordArriveeY));
+            deplacement.add(new Coordonnee(coordDepardX, coordDepardY));
+            deplacement.add(new Coordonnee(coordArriveeX, coordArriveeY));
 
             return deplacement;
         } else return null;
@@ -33,7 +33,7 @@ public class PetitPion extends Pion {
     }
 
     public String toString() {
-        return "⭑";
+        return "P"; // ⭑
     }
 
 }

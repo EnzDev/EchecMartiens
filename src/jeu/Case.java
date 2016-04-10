@@ -23,30 +23,39 @@ public class Case {
     /**
      * @return vrai si la case est vide
      */
-    public boolean estLibre(){ return this.pion==null; }
-
-    /**
-     * @param pion est le nouveau pion de la case
-     */
-    public void setPion(Pion pion) { this.pion = pion; }
-
+    public boolean estLibre() {
+        return this.pion == null;
+    }
 
     /**
      * Enlève le pion de la case
      */
-    public void delPion(){ this.pion = null; }
+    public void delPion() {
+        this.pion = null;
+    }
 
     /**
-     * @return  le pion actuellement sur la case
+     * @return le pion actuellement sur la case
      */
-    public Pion getPion() { return pion; }
+    public Pion getPion() {
+        return pion;
+    }
+
+    /**
+     * @param pion est le nouveau pion de la case
+     */
+    public void setPion(Pion pion) {
+        this.pion = pion;
+    }
 
     /**
      * @return le joueur possesseur de la case
      */
-    public Joueur getJoueur() { return joueur; }
+    public Joueur getJoueur() {
+        return joueur;
+    }
 
-    public String toString(){
-        return (this.pion==null) ? " " : this.pion.toString();
+    public String toString() {
+        return (this.pion == null) ? " " : this.pion.toString();
     }
 }
