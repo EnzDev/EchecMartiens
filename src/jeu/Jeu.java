@@ -40,16 +40,21 @@ public class Jeu {
 
     public boolean deplacementPossible(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY, Joueur joueur){
         Case c = this.plateau.getGrille(coordDepardX, coordDepardY);
+        Case g = this.plateau.getGrille(coordArriveeX, coordArriveeY);
         Liste depl = (c.getPion()).getDeplacement(coordDepardX, coordArriveeX, coordDepardY, coordArriveeY);
 
-        if(depl==null){return false;}
+        if(depl==null) return false; // Si pas de deplacement possible
+        if(g.getPion() != null && g.getJoueur().equals(joueur)) return false;
+
 
         if (c.getJoueur().equals(joueur)){
-            if (c.getPion()==this.pionArriveDeZone && !this.plateau.getGrille(coordDepardX, coordDepardY).getJoueur().equals(joueur)){return false;}{
-                for (int i = 0; i < depl.size()-1; i++) {
+            if (c.getPion()==this.pionArriveDeZone || !this.plateau.getGrille(coordDepardX, coordDepardY).getJoueur().equals(joueur)){return false;}{
+                for (int i = 1; i < depl.size()-2; i++) {
                     Coordonnee cord = (Coordonnee)depl.get(i);
-                    if(this.plateau.getGrille(cord.getX(),cord.getY())!=null){return false;};
+                    if(this.plateau.getGrille(cord.getX(),cord.getY())!=null) return false;
                 }
+                Case fin = this.plateau.getGrille(coordArriveeX,coordArriveeY);
+                if (fin != null && !fin.getJoueur().equals(joueur)) return true;
             }
         }else{return false;}
 
@@ -74,60 +79,42 @@ public class Jeu {
     *@param joueur
     */
     public void jouer(Joueur joueur){
-      int coordDX;
-      int coordDY;
-      int coordAX;
-      int coordAY;
+        int coordDX;
+        int coordDY;
+        int coordAX = -1; //PreInit cuz the while loop
+        int coordAY = -1; //PreInit cuz the while loop
+        do{
+            do {
+                System.out.println("Abcisse de dépard:");
+                coordDX =Clavier.readInt();
+                System.out.println("Ordonée de dépard:");
+                coordDY = Clavier.readInt();
+                // Si la case n'est pas vide et appartient au joueur
+                if (!this.plateau.getGrille(coordDX, coordDY).estLibre() && this.plateau.getGrille(coordDX, coordDY).getJoueur().equals(joueur)) { // Used
+                    System.out.println(" Abcisse d'arrivée:");
+                    coordAX = Clavier.readInt();
+                    System.out.println(" Ordonée d'arrivée:");
+                    coordAY = Clavier.readInt();
+                }else{
+                    System.out.println("Case vide ou n'appartenant pas au joueur");
+                }
+                // On check toutes les possibilités
+            }while(this.plateau.getGrille(coordDX, coordDY).estLibre() || !this.plateau.getGrille(coordDX, coordDY).getJoueur().equals(joueur));
 
-      //coordonées d'un pion
-      System.out.println("Abcisse de dépard:");
-      coordDX =Clavier.readInt();
-      System.out.println("Ordonée de dépard:");
-      coordDY = Clavier.readInt();
-      //test if the square is empty
-      while (this.plateau.getGrille(coordDX,coordDY).estLibre()==true){
-        System.out.println("Case vide veuilleuz selectionner une case contenant un pion");
-        System.out.println(" Abcisse de dépard:");
-        coordDX =Clavier.readInt();
-        System.out.println(" Ordonée de dépard:");
-        coordDY = Clavier.readInt();
-      }
-      //asks for the destination
-      System.out.println(" Abcisse d'arrivée:");
-      coordAX = Clavier.readInt();
-      System.out.println(" Ordonée d'arrivée:");
-      coordAY = Clavier.readInt();
-      //tests if the move is allowed
-      if (this.deplacementPossible(coordDX,coordAX,coordDY,coordAY,joueur)== true){
-        this.deplacer(coordDX,coordAX,coordDY,coordAY,joueur);
-      }
-      else{
-        while (this.deplacementPossible(coordDX,coordAX,coordDY,coordAY,joueur)== false){
-          System.out.println("le déplacement n'est pas possible veuille en choisir un autre");
-          //coordonées d'un pion
-          System.out.println(" Abcisse de dépard:");
-          coordDX =Clavier.readInt();
-          System.out.println(" Ordonée de dépard:");
-          coordDY = Clavier.readInt();
-          //test if the square is empty
-          while (this.plateau.getGrille(coordDX,coordDY).estLibre()==true){
-            System.out.println("Case vide veuilleuz selectionner une case contenant un pion");
-            System.out.println(" Abcisse de dépard:");
-            coordDX =Clavier.readInt();
-            System.out.println(" Ordonée de dépard:");
-            coordDY = Clavier.readInt();
-          }
-          //destination
-          System.out.println(" Abcisse d'arrivée:");
-          coordAX = Clavier.readInt();
-          System.out.println(" Ordonée d'arrivée:");
-          coordAY = Clavier.readInt();
+            if (!this.deplacementPossible(coordDX,coordAX,coordDY,coordAY,joueur)){
+                System.out.println("Deplacement impossible");
+            }
+
+        }while(!this.deplacementPossible(coordDX,coordAX,coordDY,coordAY,joueur));
+        Pion pionBout = this.plateau.getGrille(coordAX,coordAY).getPion();
+        if (pionBout != null){ // pion capturé
+            joueur.ajouterPionCapture(pionBout);
         }
-        if (this.deplacementPossible(coordDX,coordAX,coordDY,coordAY,joueur)== true){
-          this.deplacer(coordDX,coordAX,coordDY,coordAY,joueur);
-        }
-      }
+
+        this.deplacer(coordDX,coordAX,coordDY,coordAY,joueur); // Override la case
+        this.pionArriveDeZone = this.plateau.getGrille(coordAX,coordAY).getPion();
     }
+
     /**
     *@return true si la partie est finie
     */
@@ -143,10 +130,10 @@ public class Jeu {
     *@return le joueur gagnant
     */
     public Joueur joueurVainqueur(){
-      Jou
-      if (this.joueurs[0].calculerScore()>this.joueurs[1].calculerScore()){return this.joueurs[0]; }
-      else {return this.joueurs[1]}
-
+      if(this.joueurs[0].calculerScore()>this.joueurs[1].calculerScore())
+          return this.joueurs[0];
+      else
+          return this.joueurs[1];
     }
 
     public String toString(){

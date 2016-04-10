@@ -69,21 +69,22 @@ public class Plateau {
 
 
     public String toString() {
-        String output = "    0   1   2   3\n  ┌───┬───┬───┬───┐\n";
+        String output = "    0   1   2   3\n" ;
+//                + "  ┌───┬───┬───┬───┐\n";
 
         for (int y = 0; y < 3 ; y++) {
             output += y+" │ "+ this.grille[0][y] +" │ "+ this.grille[1][y] +" │ "+ this.grille[2][y] +" │ "+ this.grille[3][y] +" │\n";
-            output += "  ├───┼───┼───┼───┤\n";
+//            output += "  ├───┼───┼───┼───┤\n";
         }
         output += 3+" │ "+ this.grille[0][3] +" │ "+ this.grille[1][3] +" │ "+ this.grille[2][3] +" │ "+ this.grille[3][3] +" │\n";
-        output += "  ╞═══╪═══╪═══╪═══╡\n";
+//        output += "  ╞═══╪═══╪═══╪═══╡\n";
 
         for (int y = 4; y < 7 ; y++) {
             output += y+" │ "+ this.grille[0][y] +" │ "+ this.grille[1][y] +" │ "+ this.grille[2][y] +" │ "+ this.grille[3][y] +" │\n";
-            output += "  ├───┼───┼───┼───┤\n";
+//            output += "  ├───┼───┼───┼───┤\n";
         }
-        output += "8 │ "+ this.grille[0][7] +" │ "+ this.grille[1][7] +" │ "+ this.grille[2][7] +" │ "+ this.grille[3][7] +" │\n";
-        output += "  └───┴───┴───┴───┘\n";
+        output += "7 │ "+ this.grille[0][7] +" │ "+ this.grille[1][7] +" │ "+ this.grille[2][7] +" │ "+ this.grille[3][7] +" │\n";
+//        output += "  └───┴───┴───┴───┘\n";
 
         return output;
     }

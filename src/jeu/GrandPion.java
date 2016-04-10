@@ -23,41 +23,37 @@ public class GrandPion extends Pion{
      */
     public Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
         Liste deplacement = new Liste();
-        //test d'autorisation de deplacement: deplacement vertical, deplacement honrizontal ou deplacement diagonal
-        if ((coordDepardX == coordArriveeX) || (coordDepardY == coordArriveeY) || Math.abs(coordArriveeX - coordDepardX) == Math.abs(coordArriveeY - coordDepardY)) {
-            //deplacement vertical
-            if (coordDepardX == coordArriveeX) {
-                Coordonnee etape = new Coordonnee(coordArriveeX, coordArriveeY);
-                //pour i de 1 a la taille du déplacement
-                for (int i = 1; i <= Math.abs(coordDepardY - coordArriveeY); i++) {
-                    etape.setCo(coordArriveeX, coordArriveeY + i);
+
+
+        // Horizontal
+        if(coordDepardX == coordArriveeX) {
+                for (int y = coordDepardY; coordArriveeY!=y ; y += Integer.signum(coordArriveeY - coordDepardY)) {
+                    Coordonnee etape = new Coordonnee(coordDepardX, y);
                     deplacement.add(etape);
                 }
-            } else {
-                //deplacement honrizontal
-                if (coordDepardY == coordArriveeY) {
-                    Coordonnee etape = new Coordonnee(coordArriveeX, coordArriveeY);
-                    //pour i de 1 a la taille du déplacement
-                    for (int i = 1; i <= Math.abs(coordDepardX - coordArriveeX); i++) {
-                        etape.setCo(coordArriveeX + i, coordArriveeY);
-                        deplacement.add(etape);
-                    }
-                }
-                //deplacement diagonal
-                else {
-                    Coordonnee etape = new Coordonnee(coordArriveeX, coordArriveeY);
-                    //pour i de 1 a la taille du déplacement
-                    for (int i = 1; i <= Math.abs(coordDepardX - coordArriveeX); i++) {
-                        etape.setCo(coordArriveeX + i, coordArriveeY + i);
-                        deplacement.add(etape);
-                    }
-                }
+        }
+        // Vertical
+        else if(coordDepardY == coordArriveeY) {
+            for (int x = coordDepardX; coordArriveeX!=x ; x += Integer.signum(coordArriveeX - coordDepardX)) {
+                Coordonnee etape = new Coordonnee(x, coordDepardY);
+                deplacement.add(etape);
             }
         }
-        // unauthorized move
-        else {
-            deplacement.add(null);
+        // Diagonal
+        else if(Math.abs(coordDepardX-coordArriveeX) == Math.abs(coordDepardY-coordArriveeY)){
+            int movX = 0, movY = 0;
+            while((coordDepardX + movX) != coordArriveeX && (coordDepardY + movY) != coordArriveeY) {
+                movX += Integer.signum(coordArriveeX - (coordDepardX + movX));
+                movY += Integer.signum(coordArriveeY - (coordDepardY + movY));
+                Coordonnee etape = new Coordonnee(coordDepardX + movX, coordDepardY + movY);
+                deplacement.add(etape);
+            }
         }
+        // Unauthorized move
+        else return null;
+
+        // Ajoute la dernière position
+        deplacement.add(new Coordonnee(coordArriveeX, coordArriveeY));
         return deplacement;
     }
 
