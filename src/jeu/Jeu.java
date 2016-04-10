@@ -132,14 +132,21 @@ public class Jeu {
     *@return true si la partie est finie
     */
     public boolean arretPartie(){
-
-        return false;
+        boolean arret= false;
+        //if there is only one piece left in the game
+        if (this.joueurs[0].getNbPionsCaptures()+this.joueurs[1].getNbPionsCaptures()> 17){ arret = true;}
+        //if none of the pice can be moved in the next turn
+        
+        return arret;
     }
     /**
     *@return le joueur gagnant
     */
     public Joueur joueurVainqueur(){
-      return this.joueurs[0];
+      Jou
+      if (this.joueurs[0].calculerScore()>this.joueurs[1].calculerScore()){return this.joueurs[0]; }
+      else {return this.joueurs[1]}
+
     }
 
     public String toString(){
