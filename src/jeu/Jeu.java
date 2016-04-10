@@ -143,6 +143,6 @@ public class Jeu {
     }
 
     public String toString(){
-      return this.plateau.toString();
+      return this.plateau.toString() +"\n score joueur1:"+ this.joueurs[0].calculerScore() +"\n score joueur2:"+ this.joueurs[1].calculerScore()+ "\n";
     }
 }
