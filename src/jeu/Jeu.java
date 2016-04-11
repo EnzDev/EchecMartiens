@@ -146,19 +146,45 @@ public class Jeu {
         if (this.joueurs[0].getNbPionsCaptures() + this.joueurs[1].getNbPionsCaptures() > 17) {
             arret = true;
         }
-        //if none of the pice can be moved in the next turn
-
+        //if one player no piece left or if he's got only one and it was the one moved previously
+          //player 1
+          int x = 0;
+          int y = 0;
+          int possible = 0;// number of pions that can be moved
+          for( x = 0 ; x < 4; x++) {
+              for (y = 0; y < 4; y++) {
+                if ((!(this.plateau.getGrille(x,y).estLibre()))&& (this.plateau.getGrille(x,y).getPion()!=this.pionArriveDeZone)){
+                  possible ++;
+                }
+             }
+          }
+          if (possible==0){
+            arret = true;
+          }
+          //player 2
+          for(x = 0 ; x < 4; x++) {
+              for (y = 4  ; y < 8; y++) {
+                if ((!(this.plateau.getGrille(x,y).estLibre()))&& (this.plateau.getGrille(x,y).getPion()!=this.pionArriveDeZone)){
+                  possible++;
+                }
+             }
+          }
+          if (possible==0){
+            arret = true;
+          }
         return arret;
     }
 
     /**
      * @return le joueur gagnant
      */
-    public Joueur joueurVainqueur() {
+    public String joueurVainqueur() {
         if (this.joueurs[0].calculerScore() > this.joueurs[1].calculerScore())
-            return this.joueurs[0];
-        else
-            return this.joueurs[1];
+            return this.joueurs[0].getPseudo();
+            if (this.joueurs[1].calculerScore() > this.joueurs[0].calculerScore())
+              return this.joueurs[1].getPseudo();
+            else
+              return "egalitée";
     }
 
     public String toString() {
