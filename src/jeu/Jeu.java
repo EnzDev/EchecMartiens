@@ -96,9 +96,9 @@ public class Jeu {
         do {
             do {
                 error = false;
-                System.out.print("Abcisse de dépard: ");
+                System.out.print("Colone de dépard: ");
                 coordDX = Clavier.readInt();
-                System.out.print("Ordonnée de dépard: ");
+                System.out.print("Ligne de dépard: ");
                 coordDY = Clavier.readInt();
                 // Si la case n'est pas vide et appartient au joueur
                 // Check if the values are in the correct range
@@ -107,9 +107,9 @@ public class Jeu {
                 }
 
                 if (!error && !this.plateau.getGrille(coordDX, coordDY).estLibre() && this.plateau.getGrille(coordDX, coordDY).getJoueur().equals(joueur)) { // Used
-                    System.out.print("Abcisse d'arrivée: ");
+                    System.out.print("Colone d'arrivée: ");
                     coordAX = Clavier.readInt();
-                    System.out.print("Ordonnée d'arrivée: ");
+                    System.out.print("Ligne d'arrivée: ");
                     coordAY = Clavier.readInt();
                     if (!(0 <= coordAX && coordAX < 4 && 0 <= coordAY && coordAY < 8)) {
                         error = true;
@@ -146,11 +146,11 @@ public class Jeu {
         if (this.joueurs[0].getNbPionsCaptures() + this.joueurs[1].getNbPionsCaptures() > 17) {
             arret = true;
         }
-        //if one player no piece left or if he's got only one and it was the one moved previously
+        //if one player's got no pieces left or if he's got only one and it was the one moved previously
           //player 1
           int x = 0;
           int y = 0;
-          int possible = 0;// number of pions that can be moved
+          int possible = 0;// number of pions in a zone
           for( x = 0 ; x < 4; x++) {
               for (y = 0; y < 4; y++) {
                 if ((!(this.plateau.getGrille(x,y).estLibre()))&& (this.plateau.getGrille(x,y).getPion()!=this.pionArriveDeZone)){
