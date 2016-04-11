@@ -151,10 +151,10 @@ public class Jeu {
           int x = 0;
           int y = 0;
           int possible = 0;// number of pions in a zone
-          for( x = 0 ; x < 4; x++) {
-              for (y = 0; y < 4; y++) {
+          for( x = 0 ; x <= 3; x++) {
+              for (y = 0; y <= 3; y++) {
                 if ((!(this.plateau.getGrille(x,y).estLibre()))&& (this.plateau.getGrille(x,y).getPion()!=this.pionArriveDeZone)){
-                  possible ++;
+                  possible ++;//if the case is not empty nor it is occupided by the last piece that has been move the case can be played
                 }
              }
           }
@@ -162,8 +162,9 @@ public class Jeu {
             arret = true;
           }
           //player 2
-          for(x = 0 ; x < 4; x++) {
-              for (y = 4  ; y < 8; y++) {
+          possible = 0;
+          for(x = 0 ; x <= 3; x++) {
+              for (y = 4  ; y <= 7; y++) {
                 if ((!(this.plateau.getGrille(x,y).estLibre()))&& (this.plateau.getGrille(x,y).getPion()!=this.pionArriveDeZone)){
                   possible++;
                 }

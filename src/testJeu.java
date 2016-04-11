@@ -29,6 +29,6 @@ public class testJeu {
             } else tour = 0;
 
         }
-        System.out.println("Vainqueur" + jeu.joueurVainqueur());
+        System.out.println("Vainqueur: " + jeu.joueurVainqueur());
     }
 }
