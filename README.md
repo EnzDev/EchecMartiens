@@ -2,11 +2,19 @@
 ## Lancement
 
 
-Pour lancer le jeu placer vous dans le dossier echecMartiens et lancer la comande:
+Pour lancer le jeu placer vous dans le dossier echecMartiens et lancer le fichier de buil qui correspond a votre système :  
+__linux__
 ```sh
-$ cd ./bin && java testJeu
+$ ./Linux\ -\ build.sh
+$ cd ./out && java testJeu
 ```
-Il vous ait ensuite demandé de rentrer le pseudo des deux joueurs. Il vous est alors indiqué le nom du joueur dont c'est le tour.
+
+__windows__
+```sh
+$ ./Windows\ -\ build.bat
+$ cd ./out && java testJeu
+```
+Il vous ai ensuite demandé de rentrer le pseudo des deux joueurs. Il vous est alors indiqué le nom du joueur dont c'est le tour.
 
 ## Deroulement du jeu
 Selectionner un pion en rentrant dabord son numéro de colone puis son numéro de ligne.
