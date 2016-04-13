@@ -1,4 +1,4 @@
-# EchecMartiens
+# EchecMartiens [![Build Status](https://travis-ci.org/EnzDev/EchecMartiens.svg?branch=master)](https://travis-ci.org/EnzDev/EchecMartiens)
 ## Lancement
 
 
