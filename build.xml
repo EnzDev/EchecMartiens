@@ -22,8 +22,8 @@
         <delete dir="${build}"/>
     </target>
     
-    <target name="test" depends="compile">
-        <echo message="Do compiling ..." />
+    <target name="test" depends="jar">
+        <echo message="Do compiling and jarring..." />
     </target>
 
     <target name="jar" depends="compile">
