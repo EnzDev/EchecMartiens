@@ -21,4 +21,8 @@
             description="Nettoyage du build">
         <delete dir="${build}"/>
     </target>
+    
+    <target name="test" depends="compile">
+        <echo message="Do compiling ..." />
+    </target>
 </project>
