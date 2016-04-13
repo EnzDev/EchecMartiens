@@ -48,7 +48,7 @@ public class Jeu {
 
 
         if (c.getJoueur().equals(joueur)) {
-            if (c.getPion() == this.pionArriveDeZone || !this.plateau.getGrille(coordDepardX, coordDepardY).getJoueur().equals(joueur)) {
+            if (((c.getPion() == this.pionArriveDeZone) && !g.getJoueur().equals(joueur)) || !c.getJoueur().equals(joueur)) {
                 return false;
             }
             {
