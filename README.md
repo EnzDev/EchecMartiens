@@ -5,16 +5,23 @@
 Pour lancer le jeu placer vous dans le dossier echecMartiens et lancer le fichier de buil qui correspond a votre système :  
 __linux__
 ```sh
-$ ./Linux\ -\ build.sh
+$ git clone https://github.com/EnzDev/EchecMartiens.git
+$ cd EchecMartien
+$ chmod a+x LinuxBuild.sh
+$ ./LinuxBuild.sh
 $ cd ./out && java testJeu
 ```
 
 __windows__
-```sh
-$ ./Windows\ -\ build.bat
-$ cd ./out && java testJeu
+```bash
+$ git clone https://github.com/EnzDev/EchecMartiens.git
+$ cd EchecMartien
+$ ./WindowsBuild.bat
+$ cd out
+$ java testJeu
 ```
-Il vous ai ensuite demandé de rentrer le pseudo des deux joueurs. Il vous est alors indiqué le nom du joueur dont c'est le tour.
+Il vous est demandé de rentrer le nom des deux joueurs.  
+Leurs score est affiché a chaque tour.
 
 ## Deroulement du jeu
 Selectionner un pion en rentrant dabord son numéro de colone puis son numéro de ligne.
