@@ -1,8 +1,8 @@
 # EchecMartiens [![Build Status](https://travis-ci.org/EnzDev/EchecMartiens.svg?branch=master)](https://travis-ci.org/EnzDev/EchecMartiens)
 ## Lancement
 
-
-Pour lancer le jeu placer vous dans le dossier echecMartiens et lancer le fichier de buil qui correspond a votre système :  
+Allez jetter un oeil dans les releases !  
+Sinon, pour lancer le jeu placer vous dans le dossier echecMartiens et lancer le fichier de build qui correspond a votre système :  
 __linux__
 ```sh
 $ git clone https://github.com/EnzDev/EchecMartiens.git
