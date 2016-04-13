@@ -61,7 +61,8 @@ public class GrandPion extends Pion {
     }
 
     public String toString() {
-        return "⬤";// G
+        if (System.getProperty("os.name").contains("dows")) return "G"; //Handle CMD console
+        return "⚫";// G
     }
 
 

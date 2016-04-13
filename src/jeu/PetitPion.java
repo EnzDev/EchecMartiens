@@ -33,6 +33,8 @@ public class PetitPion extends Pion {
     }
 
     public String toString() {
+        if (System.getProperty("os.name").contains("dows")) return "P"; //Handle CMD console
+
         return "⭑"; // P
     }
 

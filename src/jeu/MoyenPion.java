@@ -61,7 +61,8 @@ public class MoyenPion extends Pion {
     }
 
     public String toString() {
-        return "⚫"; // M
+        if (System.getProperty("os.name").contains("dows")) return "M"; //Handle CMD console
+        return "⬤"; // M
     }
 
 }
