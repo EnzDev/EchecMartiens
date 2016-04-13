@@ -25,4 +25,12 @@
     <target name="test" depends="compile">
         <echo message="Do compiling ..." />
     </target>
+
+    <target name="jar" depends="init">
+        <jar destfile="${build}/HelloWorld.jar" basedir="${build}/">
+            <manifest>
+                <attribute name="Main-Class" value="testJeu"/>
+            </manifest>
+        </jar>
+    </target>
 </project>
