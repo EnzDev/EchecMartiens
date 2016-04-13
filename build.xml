@@ -1,0 +1,24 @@
+<project name="Echec Martien" default="compile" basedir="./">
+    <description>
+        Jeu d'echec martien en ligne de commande (ant build)
+    </description>
+    <property name="src" location="src"/>
+    <property name="build" location="out"/>
+    <property name="dist" location="dist"/>
+
+    <target name="init" depends="clean" >
+        <tstamp/>
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="compile" depends="init"
+            description="compiler les sources">
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+
+
+    <target name="clean"
+            description="Nettoyage du build">
+        <delete dir="${build}"/>
+    </target>
+</project>
