@@ -96,9 +96,9 @@ public class Jeu {
         do {
             do {
                 error = false;
-                System.out.print("Colone de dépard: ");
+                System.out.print("Colonne de départ: ");
                 coordDX = Clavier.readInt();
-                System.out.print("Ligne de dépard: ");
+                System.out.print("Ligne de départ: ");
                 coordDY = Clavier.readInt();
                 // Si la case n'est pas vide et appartient au joueur
                 // Check if the values are in the correct range
@@ -107,7 +107,7 @@ public class Jeu {
                 }
 
                 if (!error && !this.plateau.getGrille(coordDX, coordDY).estLibre() && this.plateau.getGrille(coordDX, coordDY).getJoueur().equals(joueur)) { // Used
-                    System.out.print("Colone d'arrivée: ");
+                    System.out.print("Colonne d'arrivée: ");
                     coordAX = Clavier.readInt();
                     System.out.print("Ligne d'arrivée: ");
                     coordAY = Clavier.readInt();
