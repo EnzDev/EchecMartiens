@@ -27,7 +27,7 @@
     </target>
 
     <target name="jar" depends="compile">
-        <jar destfile="${build}/EchecMartien.jar" basedir="${build}/">
+        <jar destfile="./EchecMartien.jar" basedir="${build}/">
             <manifest>
                 <attribute name="Main-Class" value="testJeu"/>
             </manifest>
