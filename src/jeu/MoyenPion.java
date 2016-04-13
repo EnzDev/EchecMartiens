@@ -61,8 +61,7 @@ public class MoyenPion extends Pion {
     }
 
     public String toString() {
-        return "M"; // ⚫
+        return "⚫"; // M
     }
-
 
 }

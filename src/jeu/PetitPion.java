@@ -33,7 +33,7 @@ public class PetitPion extends Pion {
     }
 
     public String toString() {
-        return "P"; // ⭑
+        return "⭑"; // P
     }
 
 }

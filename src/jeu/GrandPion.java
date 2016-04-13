@@ -61,7 +61,7 @@ public class GrandPion extends Pion {
     }
 
     public String toString() {
-        return "G";// ⬤
+        return "⬤";// G
     }
 
 
