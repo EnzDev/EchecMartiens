@@ -2,9 +2,6 @@ language: java
 install: ant
 script: ant jar
 
-before_deploy:
-  - git add EchecMartien.jar
-
 deploy:
   provider: releases
   api_key:
@@ -15,6 +12,7 @@ deploy:
     tags: true
 
 after_deploy:
+  - git pull
   - git rm EchecMartien.jar
-  - commit -a -m "remove jar"
-  - push
+  - git commit -a -m "remove jar (release)"
+  - git push
