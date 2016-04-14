@@ -9,4 +9,3 @@ deploy:
   on:
     repo: EnzDev/EchecMartiens
     tags: true
-    
