@@ -12,6 +12,7 @@ deploy:
   file: EchecMartien.jar
   on:
     repo: EnzDev/EchecMartiens
+    tags: true
 
 after_deploy:
   - git rm EchecMartien.jar
