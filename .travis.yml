@@ -1,5 +1,4 @@
 language: java
-install: ant
 script: ant jar
 
 deploy:
@@ -10,9 +9,3 @@ deploy:
   on:
     repo: EnzDev/EchecMartiens
     tags: true
-
-after_deploy:
-  - git pull
-  - git rm EchecMartien.jar
-  - git commit -a -m "remove jar (release)"
-  - git push
