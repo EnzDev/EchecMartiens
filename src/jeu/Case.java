@@ -57,5 +57,5 @@ public class Case {
 
     public String toString() {
         return (this.pion == null) ? " " : this.pion.toString();
-    }
+    } // Whaaaa la jolie condition ternaire
 }

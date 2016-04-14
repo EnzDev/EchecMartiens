@@ -78,7 +78,7 @@ public class Jeu {
         Case oldC = this.plateau.getGrille(coordDepardX, coordDepardY);
         Case newC = this.plateau.getGrille(coordArriveeX, coordArriveeY);
         newC.setPion(oldC.getPion());
-        oldC.setPion(null);
+        oldC.delPion();
     }
 
     /**

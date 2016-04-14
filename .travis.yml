@@ -1,5 +1,8 @@
 language: java
-install: ant jar
+script: ant jar
+
+before_deploy:
+  - git add echecMartien.jar
 
 deploy:
   provider: releases
@@ -8,3 +11,8 @@ deploy:
   file: EchecMartien.jar
   on:
     repo: EnzDev/EchecMartiens
+
+after_deploy:
+  - git rm echecMartien.jar
+  - commit -a -m "remove jar"
+  - push
