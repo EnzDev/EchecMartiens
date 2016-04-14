@@ -1,6 +1,12 @@
 language: java
 script: ant jar
 
+before_deploy:
+  - git pull
+  - git add EchecMartien.jar
+  - git commit -a -m "preDeploy"
+  - git push
+
 deploy:
   provider: releases
   api_key:
@@ -8,3 +14,9 @@ deploy:
   file: EchecMartien.jar
   on:
     repo: EnzDev/EchecMartiens
+
+after_deploy:
+  - git pull
+  - git rm EchecMartien.jar
+  - git commit -a -m "postDeploy"
+  - git push
