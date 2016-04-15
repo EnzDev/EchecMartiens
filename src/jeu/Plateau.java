@@ -7,6 +7,7 @@ public class Plateau {
     private Case[][] grille;
 
     /**
+      * Constructeur
      * @param size taille horizontale du tableau
      */
     public Plateau(int size) {
@@ -15,25 +16,43 @@ public class Plateau {
 
         grille = new Case[this.tailleHorizontale][tailleVerticale];
 
-        // !! Use Plateau.init() after, otherwise it'll be unusable
+        // !! Use Plateau.initialiser() after, otherwise it'll be unusable!!
     }
-
+    /**
+    *urcharge du constructeur pour un plateau de 4 case par défaut
+    */
     public Plateau() {
         this(4);
     }
-
+    /**
+    *Renvoie la taille horizontale du plateau
+    *@return la taille du plateau
+    */
     public int getTailleHorizontale() {
         return tailleHorizontale;
     }
-
+    /**
+    *crée une case a un endroit donné du plateau
+    *@param x Coordonnee verticale
+    *@param y Coordonnee horizontale
+    *@param c une case
+    */
     public void setGrille(int x, int y, Case c) {
         this.grille[x][y] = c;
     }
 
+    /**
+    *Renvoie la case située au coordonnées données
+    *@param x Coordonnee verticale
+    *@param y Coordonnee horizontale
+    *@return La case corespondante
+    */
     public Case getGrille(int x, int y) {
         return this.grille[x][y];
     }
-
+    /*
+    *Initialise le plateau pour commencer le jeu
+    */
     public void initialiser() {
 
         boolean debug = false; // Test an played game
@@ -83,7 +102,9 @@ public class Plateau {
         }
     }
 
-
+    /**
+    *redéfinition de la méthode String toString(): affiche le plateau
+    */
     public String toString() {
         String output = "    0   1   2   3\n" + "  ┌───┬───┬───┬───┐\n";
 

@@ -9,6 +9,13 @@ public class Jeu {
     private Joueur[] joueurs;
     private Plateau plateau;
 
+
+    /**
+     * constructeur de la classe Jeu
+     *
+     * @param j1 le premier joueur
+     * @param j2 le second joueur
+     */
     public Jeu(Joueur j1, Joueur j2) {
         this.joueurs = new Joueur[2];
         this.joueurs[0] = j1;
@@ -38,6 +45,17 @@ public class Jeu {
         plateau.initialiser();
     }
 
+
+    /**
+    *Teste les préconditions relatives au déplacement d'un pion dans la grille de jeu
+    *
+    *@param coordDepartX  coordonnée horizontale du point de départ
+    *@param coordDepartY coordonnée verticale du point de départ
+    *@param coordArriveeX coordonnée horizontale du point d'arrivée
+    *@param coordArriveeY coordonnée verticale du point d'arrivée
+    *@param joueur  le joueur qui demande le déplacement
+    *@return true si les préconditions de déplacement sont vérifiées, false sinon
+    */
     public boolean deplacementPossible(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY, Joueur joueur) {
         Case c = this.plateau.getGrille(coordDepardX, coordDepardY);
         Case g = this.plateau.getGrille(coordArriveeX, coordArriveeY);
@@ -67,12 +85,15 @@ public class Jeu {
     }
 
     /**
-     * The programmer should verify deplacementPossible()
+     *Effectue le déplacement d'un pion en modifiant ses coordonnées (coordonnées de départ) qui prennent pour valeur les coordonnées d'arrivée.
+     *Si un pion adverse a pour coordonnées, les coordonnées d'arrivée du pion déplacé alors il est capturé.
+     *Pré-conditions: La programmeur doit préalablement vérifier si le déplacement est possible
      *
-     * @param coordDepardX
-     * @param coordArriveeX
-     * @param coordDepardY
-     * @param coordArriveeY
+     * @param coordDepardX la coordonnée horizontale de la case dont le joueur veut déplacer le pion
+     * @param coordArriveeX la coordonnée verticale de la case dont le joueur veut déplacer le pion
+     * @param coordDepardY la coordonnée horizontale de la case où le joueur veut déplacer le pion
+     * @param coordArriveeY la coordonnée verticale de la case où le joueur veut déplacer le pion
+     *
      */
     public void deplacer(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
         Case oldC = this.plateau.getGrille(coordDepardX, coordDepardY);
@@ -82,9 +103,9 @@ public class Jeu {
     }
 
     /**
-     * Lance un tour de jeu
+     * Lance un tour de jeu: demande au joueur le déplacement qu'il souhaite faire tant que le joueur n'entre pas un déplacement valide.
      *
-     * @param joueur
+     * @param joueur Joueur dont c'est le tour
      */
     public void jouer(Joueur joueur) {
         int coordDX;
@@ -138,7 +159,8 @@ public class Jeu {
     }
 
     /**
-     * @return true si la partie est finie
+     *permet de savoir si la partie est finie ou non
+     * @return true si la partie est finie false sinon
      */
     public boolean arretPartie() {
         boolean arret = false;
@@ -175,12 +197,13 @@ public class Jeu {
             arret = true;
           }
         }
-        
+
         return arret;
     }
 
     /**
-     * @return le joueur gagnant
+     *donne le joueur gagnant
+     * @return le pseudo joueur gagnant ou "égalité" si ex aequo
      */
     public String joueurVainqueur() {
         if (this.joueurs[0].calculerScore() > this.joueurs[1].calculerScore())
@@ -191,6 +214,9 @@ public class Jeu {
               return "egalitée";
     }
 
+    /**
+    * redéfinition de la méthode String toString(): affiche le plateau et le score
+    */
     public String toString() {
         return this.plateau.toString() + "\n score " + this.joueurs[0].getPseudo() + ":" + this.joueurs[0].calculerScore() + "\n score " + this.joueurs[1].getPseudo() + ":" + this.joueurs[1].calculerScore() + "\n";
     }

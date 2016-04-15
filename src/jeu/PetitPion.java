@@ -3,21 +3,22 @@ package jeu;
 import liste.Liste;
 
 public class PetitPion extends Pion {
-    /**
-     * @return score qui donne le nombre de point associé au pion
-     */
+  /**
+  * récupére la valeur du score d'un pion
+   * @return valeur du pion
+   */
     public int getScore() {
         return 1;
     }
 
     /**
-     * methode qui liste les déplacements autorisés
+     * donne le chemin de coordonnées que constitue le déplacement du point de départ vers le point d'arrivée. Les déplacements autorisés sont diagonaux mais que d'une case.
      *
      * @param coordDepardX  qui représente l'abscisse de dépard
      * @param coordArriveeX qui représente l'ordonée d'arrivé
      * @param coordDepardY  qui représente l'abscisse de dépard
      * @param coordArriveeY qui représente l'ordonée d'arrivé
-     * @return deplacement qui donne les cases parcourues au cours du déplacement
+     * @return une liste de coordonnées qui constitue le déplacement du point de départ vers le point d'arrivée si le déplacement est possible, null sinon
      */
     public Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
         // If diag (1)
@@ -31,7 +32,9 @@ public class PetitPion extends Pion {
         } else return null;
 
     }
-
+    /**
+    *redéfinition de la méthode public String toString(): symbol qui représentera le pion sur le plateau
+    */
     public String toString() {
         if (System.getProperty("os.name").contains("dows")) return "P"; //Handle CMD console
 

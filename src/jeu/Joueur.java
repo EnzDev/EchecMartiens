@@ -7,6 +7,7 @@ public class Joueur {
     private Liste pionsCaptures;
 
     /**
+     *Constructeur
      * @param j le pseudo du joueur
      */
     public Joueur(String j) {
@@ -14,20 +15,23 @@ public class Joueur {
         this.pionsCaptures = new Liste();
     }
     /**
-    @return pseudo
+    * Retourne le Pseudo du joueur
+    @return le pseudo
     */
     public String getPseudo(){
       return this.pseudo;
     }
 
     /**
-     * @param pionCapture sera ajouté aux pions du joueur
+     * ajout à la liste d'un pion qui a été capturés
+     * @param pion capturé
      */
     public void ajouterPionCapture(Pion pionCapture) {
         this.pionsCaptures.add(pionCapture);
     }
 
     /**
+     * permet de connaître le nombre de pions capturés
      * @return le nombre de pions capturés
      */
     public int getNbPionsCaptures() {
@@ -35,6 +39,7 @@ public class Joueur {
     }
 
     /**
+     *redéfinition de la méthode public boolean equals(Object o)
      * @param object est une instance de Joueur
      * @return la comparaison des pseudo des deux instances
      */
@@ -49,6 +54,7 @@ public class Joueur {
 
 
     /**
+     *calcule le score du joueur
      * @return le score total du joueur
      */
     public int calculerScore() {

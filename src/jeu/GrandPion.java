@@ -14,13 +14,13 @@ public class GrandPion extends Pion {
     }
 
     /**
-     * methode qui liste les déplacements autorisés
+     * donne le chemin de coordonnées que constitue le déplacement du point de départ vers le point d'arrivée.
      *
-     * @param coordDepardX  qui représente l'abscisse de dépard
-     * @param coordArriveeX qui représente l'ordonée d'arrivé
-     * @param coordDepardY  qui représente l'abscisse de dépard
-     * @param coordArriveeY qui représente l'ordonée d'arrivé
-     * @return deplacement qui donne les cases parcourues au cours du déplacement
+     * @param coordDepardX  coordonnée horizontale du point de départ
+     * @param coordArriveeXcoordonnée verticale du point de départ
+     * @param coordDepardY  coordonnée horizontale du point d'arrivée
+     * @param coordArriveeY coordonnée verticale du point d'arrivée
+     * @return une liste de coordonnées qui constitue le déplacement du point de départ vers le point d'arrivée si le déplacement est vertical, null sinon
      */
     public Liste getDeplacement(int coordDepardX, int coordArriveeX, int coordDepardY, int coordArriveeY) {
         Liste deplacement = new Liste();
@@ -59,10 +59,12 @@ public class GrandPion extends Pion {
 
         return deplacement;
     }
-
+    /**
+    *redéfinition de la méthode public String toString()
+    */
     public String toString() {
         if (System.getProperty("os.name").contains("dows")) return "G"; //Handle CMD console
-        return "⚫";// G
+        return "⬤";// G
     }
 
 

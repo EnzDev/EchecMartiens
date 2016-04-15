@@ -17,24 +17,23 @@ public class Coordonnee {
         this.x = abscisse;
         this.y = ordonnee;
     }
-
-// --Commented out by Inspection START (11/04/2016 00:57):
-//    public void setCo(int abscisse, int ordonnee) {
-//        this.x = abscisse;
-//        this.y = ordonnee;
-//    }
-// --Commented out by Inspection STOP (11/04/2016 00:57)
-
+    /**
+     * accesseur qui permet de récupérer la coordonnée en colone
+     *@return le numéro de colone
+    */
     public int getX() {
         return x;
     }
-
+    /**
+     * accesseur qui permet de récupérer la coordonnée en ligne
+     *@return le numéro de ligne
+     */
     public int getY() {
         return y;
     }
 
     /**
-     * methode qui permet d'afficher les coordonées
+     * redéfinition de la méthode public String toString(): permet d'afficher les coordonées
      */
     public String toString() {
         return "x : " + x + "\t y : " + y;
