@@ -146,6 +146,7 @@ public class Jeu {
         if (this.joueurs[0].getNbPionsCaptures() + this.joueurs[1].getNbPionsCaptures() > 17) {
             arret = true;
         }
+        else{
         //if one player's got no pieces left or if he's got only one and it was the one moved previously
           //player 1
           int x = 0;
@@ -173,6 +174,8 @@ public class Jeu {
           if (possible==0){
             arret = true;
           }
+        }
+        
         return arret;
     }
 
